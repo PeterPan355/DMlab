@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+    <script src="~/Scripts/FacebookApi.js">
+
+    </script>
+</head>
+<body>
+    <div id="start">
+        <div id="wait">
+            Please wait!
+        </div>
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#545454; display:inline;">
+        <div class="container">
+
+            <div class="navbar-header" style="float:left;width:100%;margin-top:-40px;">
+                
+                <div id="UserPicture" onmouseover="userData();"></div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Društveni preporučitelj", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Recommend", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
+                <div class="navbar-brand dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="margin-top:-5px;font-weight:bold;">
+                        Categories
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="listOfCategories" class="dropdown-menu" style="background-color:#333333;">
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <center onload="showData();"><p>&copy; @DateTime.Now.Year - Društvene Mreže - Team 16</p></center>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

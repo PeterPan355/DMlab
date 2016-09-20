@@ -17,6 +17,7 @@ namespace DmLaboratorij_1.Controllers
        //DAA
 
 
+
         [HttpGet]
         [Route("api/Genres/{genre_id}")]
         [ResponseType(typeof(GenresModel))]

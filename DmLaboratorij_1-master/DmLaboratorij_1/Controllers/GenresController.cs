@@ -13,9 +13,7 @@ namespace DmLaboratorij_1.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class GenresController : ApiController
     {
-
-
-
+        //tadaaa
        //DAA
 
         [HttpGet]
